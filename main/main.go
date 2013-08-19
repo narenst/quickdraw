@@ -1,13 +1,14 @@
 package main
 
 import (
+    "github.com/narenst/quickdraw/model"
     "github.com/hoisie/web"
     "encoding/json"
     "log"
 )
 
 func getVideos() string {
-   video := new(Video)
+   video := new(model.VideoModel)
    video.Url = "http://vimeo.com/69170991"
    video.Service = "vimeo"
    video.Climber.Name = "James Kassay"
@@ -21,10 +22,6 @@ func getVideos() string {
       log.Println(err)
    }
    return string(json)
-}
-
-func hello(path string) string {
-   return "Hola " + path
 }
 
 func main() {
